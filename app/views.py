@@ -30,8 +30,8 @@ def contact():
             return render_template('contact.html', form = form)
         else:
             msg = Message(request.form['subject'], sender=(request.form['name'],
-            request.form['email']), recipients=["telljelani@gmail.com"])
-            msg.body = form.message.data
+            request.form['email']), recipients=["3f7f976571-56db27@inbox.mailtrap.io"])
+            msg.body = request.form['message']
             mail.send(msg)
             flash('Message sent')
             return redirect(url_for('home'))
